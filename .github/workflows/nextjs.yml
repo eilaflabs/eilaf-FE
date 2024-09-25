@@ -1,0 +1,92 @@
+# ---------------- Developed by Yousuf Kalim - MERN TL ---------------- #
+# This workflow is a Continuous Integration/Continuous Deployment (CI/CD) pipeline for deploying a Next.js application
+# to a remote ubuntu server and/or GitHub Pages (for static export).
+# If SSR is required, we deploy to a server. Otherwise, we use static export for GitHub Pages.
+
+name: 'CD'
+
+env:
+  APP_NAME: ${{ vars.APP_NAME }}
+  COMPONENT_NAME: ${{ vars.COMPONENT_NAME }}
+  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}/${{ vars.COMPONENT_NAME }}
+  NODE_ENV: ${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment (dev, staging, preprod, prod)'
+        type: choice
+        options:
+          - dev
+          - staging
+          - preprod
+          - prod
+        required: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    if: ${{ contains('["haazaa"]', github.actor) || github.event_name == 'push' || github.event.inputs.environment == 'dev' }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install deps and build project
+        run: |
+          yarn install
+          yarn run build  # Build for production (for SSR or static export)
+
+      # Deploy to a remote server if using SSR or APIs.
+      - name: Transfer files to server
+        if: ${{ github.event.inputs.environment != 'prod' || steps.next_export.outputs.static_export != 'true' }}
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets[format('{0}_SERVER', env.NODE_ENV)] }}
+          username: ${{ secrets[format('{0}_USER', env.NODE_ENV)] }}
+          key: ${{ secrets[format('{0}_KEY', env.NODE_ENV)] }}
+          rm: true
+          source: '.next'  # Transfer the build directory for Next.js SSR
+          target: ${{ env.RELEASE_PATH }}/.next
+
+      - name: Copy config files and restart NGINX
+        if: ${{ github.event.inputs.environment != 'prod' || steps.next_export.outputs.static_export != 'true' }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets[format('{0}_SERVER', env.NODE_ENV)] }}
+          username: ${{ secrets[format('{0}_USER', env.NODE_ENV)] }}
+          key: ${{ secrets[format('{0}_KEY', env.NODE_ENV)] }}
+          script: |
+            sudo systemctl restart nginx
+
+  # GitHub Pages static deployment if the app is static (SSG only).
+  deploy-pages:
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: ${{ github.event.inputs.environment == 'prod' && steps.next_export.outputs.static_export == 'true' }}
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: next
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
