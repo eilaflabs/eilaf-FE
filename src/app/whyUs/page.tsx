@@ -5,6 +5,7 @@ import Homesection from "@/components/Home-section";
 import WhyusCards from "@/components/whyUs.Cards";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import ClientLayout from "./ClientLayout";
 import Footer from "@/components/common/Footer";
 import { Box } from "@mui/material";
@@ -22,6 +23,7 @@ export default function whyUs() {
         <WhyusCards />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

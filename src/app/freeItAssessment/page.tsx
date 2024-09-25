@@ -4,6 +4,7 @@ import Header from "@/components/common/Header";
 import Homesection from "@/components/Home-section";
 import Footer from "@/components/common/Footer";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import ClientLayout from "./ClientLayout";
 import FreeItAssessmentDropD from "@/components/FreeItAssessmentDropD";
 import FreeItAsssessmentReport from "@/components/FreeItAsssessmentReport";
@@ -24,6 +25,7 @@ export default function freeItAssessment() {
         <FreeItAsssessmentReport />
         <RequiredFields />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

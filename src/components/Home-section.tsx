@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-"use client";
+"use client"; // Ensures it's a Client Component
 
 import React from "react";
 import { Box, Typography } from "@mui/material";
@@ -15,6 +14,7 @@ import HelpDeskimage from "@/assets/HelpDeskMainImage.jpeg";
 import { usePathname } from "next/navigation";
 import cloudServicesimage from "@/assets/CloudServicesMainImage.png";
 import managedSecurityimage from "@/assets/ManagedSecurityMainPage.jpeg";
+import DisasterRecoveryImage from "@/assets/DisasterRecoveryMainImage.jpeg";
 import { keyframes } from "@mui/system";
 
 const slideIn = keyframes`
@@ -41,10 +41,6 @@ import FreeItAssessmentImage from "@/assets/FreeITAssessmentMainImage.jpeg";
 const Homesection: React.FC = () => {
   const pathname = usePathname();
 
-  type ContentType =
-    | { image: string; text: string; animatedText: string }
-    | { image: string; text: string };
-
   const content = {
     "/": {
       image: HomeMainImage.src,
@@ -67,13 +63,13 @@ const Homesection: React.FC = () => {
       image: OutsourcingImage.src,
       text: "",
     },
-    "/whyus": {
+    "/whyUs": {
       image: WhyUsImage.src,
-      text: "Why Us",
+      text: "",
     },
-    "/testimonials": {
+    "/testimonals": {
       image: TestimonalsImage.src,
-      text: "Testimonials",
+      text: "",
     },
     "/breakFix": {
       image: BreakFiximage.src,
@@ -89,6 +85,10 @@ const Homesection: React.FC = () => {
     },
     "/managedSecurity": {
       image: managedSecurityimage.src,
+      text: "",
+    },
+    "/disasterRecovery": {
+      image: DisasterRecoveryImage.src,
       text: "",
     },
     "/freeItAssessment": {
@@ -141,7 +141,7 @@ const Homesection: React.FC = () => {
           sx={{
             position: "relative",
 
-            zIndex: 220, // Text and animation above overlay
+            zIndex: 220,
             textAlign: "center",
             display: "flex",
             alignItems: "center",

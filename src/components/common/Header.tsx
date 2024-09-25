@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       setIsMobile(window.innerWidth <= 800);
     };
     window.addEventListener("resize", handleResize);
-    handleResize(); // Set initial value
+    handleResize();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <Box
+    <AppBar
       sx={{
         position: isSticky ? "fixed" : "relative",
         top: 0,
@@ -73,15 +73,11 @@ const Header: React.FC = () => {
         width: "100%",
         height: "141px",
         backgroundColor: "#ffffff",
-        // padding: "0 1%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         borderBottom: "1px solid #d8d8d8",
-        // "@media (max-width:450px)": {
-        //   position: "fixed",
-        // },
       }}
     >
       <Toolbar
@@ -115,7 +111,6 @@ const Header: React.FC = () => {
             <Image
               src={HeaderLogo}
               alt="Logo"
-              width="100%"
               className="header-logo"
               style={{ width: "100%", height: "100%" }}
             />
@@ -126,9 +121,7 @@ const Header: React.FC = () => {
           sx={{
             display: isMobile && !isNavOpen ? "none" : "flex",
             alignItems: "center",
-            // gap: "20px",
             height: "100%",
-            // bgcolor: "red",
             backgroundColor: "#ffffff",
 
             "@media (max-width: 800px)": {
@@ -185,7 +178,6 @@ const Header: React.FC = () => {
               borderBottom: "1px solid #ffffff",
               padding: "0 20px",
               height: "100%",
-              // bgcolor: "red",
               "&:hover": {
                 borderBottom: "1px solid #3644af",
               },
@@ -316,23 +308,25 @@ const Header: React.FC = () => {
                     MANAGED SECURITY
                   </MenuItem>
                 </Link>
-                <MenuItem
-                  sx={{
-                    fontWeight: "500",
-                    textDecoration: "none",
-                    cursor: "pointer",
-                    color: "#3644af",
-                    fontSize: "13px",
-                    padding: "13px 20px",
-                    "&:hover": {
-                      bgcolor: "#3644af",
-                      color: "#fff",
-                      transition: "0.5s",
-                    },
-                  }}
-                >
-                  DISASTER RECOVERY
-                </MenuItem>
+                <Link href="/disasterRecovery">
+                  <MenuItem
+                    sx={{
+                      fontWeight: "500",
+                      textDecoration: "none",
+                      cursor: "pointer",
+                      color: "#3644af",
+                      fontSize: "13px",
+                      padding: "13px 20px",
+                      "&:hover": {
+                        bgcolor: "#3644af",
+                        color: "#fff",
+                        transition: "0.5s",
+                      },
+                    }}
+                  >
+                    DISASTER RECOVERY
+                  </MenuItem>
+                </Link>
                 <Link href="/freeItAssessment">
                   <MenuItem
                     sx={{
@@ -359,7 +353,6 @@ const Header: React.FC = () => {
           {/* ABOUT */}
           <Box
             sx={{
-              // bgcolor: "green",
               position: "relative",
               display: "flex",
               alignItems: "center",
@@ -512,7 +505,7 @@ const Header: React.FC = () => {
           </IconButton>
         )}
       </Toolbar>
-    </Box>
+    </AppBar>
   );
 };
 

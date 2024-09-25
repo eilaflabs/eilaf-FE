@@ -44,7 +44,6 @@ export const Footer = () => {
         alignItems={"center"}
         justifyContent={"center"}
         gap={"20px"}
-        // padding={"50px 20px"}
       >
         <Box
           display={"flex"}

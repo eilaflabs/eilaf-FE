@@ -172,7 +172,7 @@ const Testimonalscontent = () => {
               </Typography>
               <Box>
                 <Typography
-                  lineHeight={"1.5"}
+                  lineHeight={"27px"}
                   color="#3444af"
                   fontWeight={"bold"}
                 >

@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import Image from "next/image";
 import BlackLaptop from "@/assets/laptop-image.png";

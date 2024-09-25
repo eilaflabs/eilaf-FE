@@ -5,6 +5,7 @@ import Homesection from "@/components/Home-section";
 import Testimonalstext from "@/components/Testimonals.content";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import ClientLayout from "./ClientLayout";
 import Footer from "@/components/common/Footer";
 import { Box } from "@mui/material";
@@ -22,6 +23,7 @@ export default function Testimonals() {
         <Testimonalstext />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

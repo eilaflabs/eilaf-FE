@@ -5,6 +5,7 @@ import Homesection from "@/components/Home-section";
 import Footer from "@/components/common/Footer";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import ClientLayout from "./ClientLayout";
 import HelpDesk from "@/components/HelpDesk";
 import { Box } from "@mui/material";
@@ -23,6 +24,7 @@ export default function BreakFix() {
         <HelpDesk />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

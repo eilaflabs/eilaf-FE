@@ -19,31 +19,27 @@ const Break_fix = () => {
         backgroundColor: "transparent",
         backgroundImage: "linear-gradient(7deg, #d6d6d6 76%, #ffffff 76%)",
 
-        "@media (max-width:1150px)": {
-          padding: "150px 0 120px",
-        },
         "@media (max-width:768px)": {
-          flexDirection: "column-reverse",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          marginBottom: "-22%",
+          paddingTop: "0px",
           backgroundImage: "linear-gradient(7deg, #ffffff 76%, #ffffff 76%)",
         },
       }}
     >
       <Box
         width={"50%"}
-        padding={"100px 0 100px 200px"}
+        padding={"100px 0px 100px 100px"}
         display={"flex"}
         flexDirection={"column"}
-        justifyContent={"center"}
         gap={"20px"}
         alignItems={"flex-start"}
         sx={{
-          "@media (max-width:1150px)": {
-            padding: "0px  0 0 2.5%",
-            // alignItems: "center",
-            justifyContent: "center",
-          },
           "@media (max-width:768px)": {
-            width: "100%",
+            width: "90%",
           },
         }}
       >
@@ -66,6 +62,11 @@ const Break_fix = () => {
             fontSize={"16px"}
             lineHeight={"1.2em"}
             fontWeight={"700"}
+            sx={{
+              "@media(max-width:768px)": {
+                fontSize: "13px",
+              },
+            }}
           >
             Not ready to fully outsource your IT?
           </Typography>
@@ -74,6 +75,11 @@ const Break_fix = () => {
             fontSize={"16px"}
             lineHeight={"1.2em"}
             fontWeight={"400"}
+            sx={{
+              "@media(max-width:768px)": {
+                fontSize: "13px",
+              },
+            }}
           >
             No Problem! We can help as needed on issues and projects on a
             Break/Fix arrangement.
@@ -94,6 +100,10 @@ const Break_fix = () => {
 
             "&:hover": {
               transform: "scale(1.1)",
+            },
+            "@media(max-width:768px)": {
+              alignSelf: "center",
+              marginRight: "15%",
             },
           }}
         >
@@ -127,11 +137,8 @@ const Break_fix = () => {
             paddingTop: "9%",
             display: "block",
             "@media (max-width:768px)": {
-              width: "384px", // Adjust width at 768px breakpoint
-            },
-            "@media (max-width:400px)": {
-              width: "100%",
-              height: "300px",
+              paddingTop: "2%",
+              width: "90%",
             },
           }}
         >

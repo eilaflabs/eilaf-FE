@@ -13,10 +13,11 @@ const ITOutsourcingBreakFix = () => {
       bgcolor={"#ffffff"}
       position={"relative"}
       padding={"50px 0"}
-      marginBottom={"-100px"}
+      // marginBottom={"-30px"}
       sx={{
-        "@media(max-width:1000px)": {
+        "@media(max-width:768px)": {
           width: "100%",
+          marginBottom: "-10%",
         },
       }}
     >
@@ -28,10 +29,24 @@ const ITOutsourcingBreakFix = () => {
         sx={{
           "@media (max-width:768px)": {
             flexDirection: "column",
+            display: "flex",
+            // justifyContent: "center",
+            alignContent: "center",
           },
         }}
       >
-        <Box width={"100%"} padding={"0 2.5% 0 2.5%"}>
+        <Box
+          width={"100%"}
+          padding={"0 2.5% 0 2.5%"}
+          sx={{
+            "@media (max-width:768px)": {
+              display: "flex",
+              width: "100%",
+              alignSelf: "center",
+              // marginBottom: "10%",
+            },
+          }}
+        >
           <Image
             src={ItImage}
             alt="It outsourcing image"
@@ -62,11 +77,20 @@ const ITOutsourcingBreakFix = () => {
             fontWeight={"bold"}
             whiteSpace={"pre"}
             sx={{
-              "@media (max-width:1000px)": {
-                fontSize: "40px",
+              "@media (max-width:768px)": {
+                flexDirection: "column",
+                width: "70%",
+                display: "flex",
+                alignSelf: "center",
+              },
+              "@media (max-width:380px)": {
+                flexDirection: "column",
+                width: "90%",
+                display: "flex",
+                alignSelf: "center",
               },
               "@media (max-width:450px)": {
-                fontSize: "34px",
+                fontSize: "30px",
               },
             }}
           >
@@ -77,6 +101,13 @@ const ITOutsourcingBreakFix = () => {
             fontSize={"16px"}
             lineHeight={"1.2em"}
             fontWeight={"400"}
+            sx={{
+              "@media (max-width:768px)": {
+                flexDirection: "column",
+                width: "90%",
+                alignSelf: "center",
+              },
+            }}
           >
             Let out IT worry about your technology so you can focus on growing
             your buisness. We will take care of all your IT needs for a low flat
@@ -102,6 +133,15 @@ const ITOutsourcingBreakFix = () => {
                 fontSize: "12px",
                 display: "flex",
                 justifyContent: "center",
+              },
+              "@media (max-width:768px)": {
+                display: "flex",
+                alignSelf: "center",
+                marginBottom: "10%",
+              },
+              "@media(max-width:770px)": {},
+              "@media(max-width:550px)": {
+                marginBottom: "7% ",
               },
             }}
           >

@@ -5,6 +5,7 @@ import Homesection from "@/components/Home-section";
 import Outsourcingservices from "@/components/outsourcing.services";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import Footer from "@/components/common/Footer";
 import ItOutSourcingDropD from "@/components/ItOutSourcing-DropD";
 import { Box } from "@mui/material";
@@ -24,6 +25,7 @@ export default function OutSourcing() {
         <Outsourcingservices />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

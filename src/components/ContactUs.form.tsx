@@ -4,7 +4,9 @@ import { FaFacebookF } from "react-icons/fa";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Box, TextField, Button, Typography } from "@mui/material";
 import TelegramIcon from "@mui/icons-material/Telegram";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
+
 import { useEffect, useState } from "react";
 
 export const ContactUsform = () => {

@@ -10,6 +10,16 @@
   }
 }
 
+
+.homesection-sticky {
+  position: sticky;
+  z-index: 1100;
+  overflow: "auto";
+  height: "100vh";
+  top: "0px",
+
+}
+
 html,
 body {
   margin: 0;

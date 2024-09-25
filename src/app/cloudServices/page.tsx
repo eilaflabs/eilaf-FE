@@ -6,6 +6,7 @@ import Homesection from "@/components/Home-section";
 import Footer from "@/components/common/Footer";
 import FreeItAssessment from "@/components/FreeItAssessment";
 import Companyimages from "@/components/Company-images";
+import SLiderImages from "@/components/imagesSlider";
 import CloudServices from "@/components/CloudServices";
 import ClientLayout from "./ClientLayout";
 import { Box } from "@mui/material";
@@ -25,6 +26,7 @@ export default function cloudServices() {
         <CloudServices />
         <FreeItAssessment />
         <Companyimages />
+        <SLiderImages />
         <Footer />
       </Box>
     </ClientLayout>

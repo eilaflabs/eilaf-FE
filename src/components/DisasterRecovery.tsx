@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, List, ListItem, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import Image from "next/image";
 import DisasterImage from "@/assets/disasterRecoveryCloud.png";
 
@@ -10,22 +10,57 @@ export const DisasterRecovery = () => {
       width={"100%"}
       display={"flex"}
       justifyContent={"center"}
-      padding={"100px 0px 100px 0px"}
+      padding={"100px"}
       bgcolor={"white"}
+      sx={{
+        "@media(max-width:768px)": {
+          paddingTop: "30px",
+          paddingBottom: "33px",
+        },
+      }}
     >
-      <Box width={"90%"} display={"flex"} alignItems={"flex-start"}>
+      <Box
+        width={"100%"}
+        display={"flex"}
+        alignItems={"flex-start"}
+        justifyContent="space-between"
+        sx={{
+          "@media(max-width:768px)": {
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: "column",
+            alignItems: "center",
+          },
+        }}
+      >
         <Box
           width={"50%"}
           display={"flex"}
           flexDirection={"column"}
-          gap={"50px"}
+          gap={"48px"}
+          sx={{
+            "@media(max-width:768px)": {
+              width: "100%",
+              gap: "45px",
+            },
+          }}
         >
           <Box>
             <Typography
               color="#000000"
               fontSize={"52px"}
               fontWeight={"bold"}
-              padding={"20px 0px 32px 11px"}
+              padding={"17px 0px 7px 11px"}
+              sx={{
+                "@media(max-width:768px)": {
+                  fontSize: "32px",
+                  paddingBottom: "12px",
+                  paddingTop: "0px",
+                },
+                "@media(,max-width:1200px)": {
+                  fontSize: "30px",
+                },
+              }}
             >
               Disaster Recovery
             </Typography>
@@ -41,6 +76,10 @@ export const DisasterRecovery = () => {
                 fontWeight: "400",
                 lineHeight: "30px",
                 padding: "0px 0px 0px 12px",
+                "@media(max-width:768px)": {
+                  fontSize: "12px",
+                  lineHeight: "23px",
+                },
               }}
             >
               If something happened and your valuable business data was lost,
@@ -58,8 +97,16 @@ export const DisasterRecovery = () => {
               fontWeight={"700"}
               lineHeight={"30px"}
               padding={"25px 0px 0px 10px"}
+              sx={{
+                "@media(max-width:768px)": {
+                  display: "flex",
+                  justifyContent: "center",
+                  paddingTop: "16px",
+                  fontSize: "13px",
+                },
+              }}
             >
-              DON'T LET THE WORST HAPPEN TO YOUR BUSINESS
+              DON&apos;T LET THE WORST HAPPEN TO YOUR BUSINESS
             </Typography>
           </Box>
           <Box
@@ -69,11 +116,19 @@ export const DisasterRecovery = () => {
             alignItems={"flex-start"}
           >
             <Typography
-              width={"95%"}
+              width={"80%"}
               fontSize={"30px"}
               color="#3444af"
-              padding={"0px 0px 0px 8px"}
+              lineHeight={"30px"}
+              paddingLeft={"8px"}
               fontWeight={"800"}
+              sx={{
+                "@media(max-width:768px)": {
+                  fontSize: "18px",
+                  width: "100%",
+                  padding: "0px",
+                },
+              }}
             >
               Contact us today to learn more about how your business can benefit
               from our Disaster Recovery services
@@ -82,9 +137,7 @@ export const DisasterRecovery = () => {
               sx={{
                 padding: "15px",
                 fontSize: "13px",
-
                 letterSpacing: "1px",
-                height: "",
                 fontWeight: "400",
                 color: "#000000",
                 backgroundColor: "#ffffff",
@@ -95,7 +148,17 @@ export const DisasterRecovery = () => {
             </Button>
           </Box>
         </Box>
-        <Box width={"50%"} display={"flex"} justifyContent={"center"}>
+        <Box
+          width={"50%"}
+          display={"flex"}
+          justifyContent={"center"}
+          sx={{
+            "@media(max-width:768px)": {
+              width: "100%",
+              paddingTop: "5%",
+            },
+          }}
+        >
           <Image
             src={DisasterImage}
             alt="DisasterRecoveryImage"
