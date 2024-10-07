@@ -67,7 +67,7 @@ jobs:
       - name: Install deps and build project
         run: |
           yarn install
-          yarn run build
+          CI=yarn run build
 
       # Step 4: Transfer the built files to the remote server.
       - name: Transfer files to server
