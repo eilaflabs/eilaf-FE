@@ -1,17 +1,37 @@
-# ---------------- Developed by M Adnan Ajmal - Next.js CD ---------------- #
-# This workflow is a Continuous Deployment (CD) pipeline for deploying a Next.js application
+# ---------------- Developed by Adnan Ajmal - Next.js CD ---------------- #
+# This workflow is a Continuous Integration/Continuous Deployment (CI/CD) pipeline for deploying a Next.js application
 # to a remote Ubuntu server.
 #
-# 1. The workflow runs on a push to the main branch and can be manually triggered with inputs to specify the target environment.
+# Here are some comments to make it easier for everyone to use:
 #
-# 2. It requires secrets and environment variables to be set up in your repository for the server, user, SSH keys, and NGINX config.
+# 1. The workflow uses environment variables to set the application name, component name, and release path.
+#    Ensure that these are set correctly according to your application's configuration.
+#
+# 2. The workflow runs on a push to the main branch and can be manually triggered with inputs to specify the target environment.
+#
+# 3. It's important to note that this workflow uses repository environment and several secrets and variables that need to be set up
+#    in order for it to work properly. You will need to create the following secrets in your repository environment:
+#
+#    3.1. [Env]_SERVER: the IP address or domain name of the remote server you are deploying to.
+#    3.2. [Env]_USER: the username you use to SSH into the remote server (root user is recommended).
+#    3.3. [Env]_KEY: the SSH private key you use to authenticate with the remote server.
+#    3.4. [Env]_NGINX: the contents of your NGINX configuration file. This should be a multi-line string with each line
+#         separated by a newline character.
+#
+# In addition, you will need to set up the following variables in your repository environment:
+#
+#    3.5. APP_NAME: the name of the project without spaces.
+#    3.6. COMPONENT_NAME: the name of the app component e.g: frontend, admin, backend.
+#
+# Overall, this workflow provides a good starting point for deploying a Next.js application to a remote server using GitHub Actions.
+# However, it should be customized according to your application's specific requirements.
 
 name: 'Next.js CD'
 
 env:
   APP_NAME: ${{ vars.APP_NAME }}
   COMPONENT_NAME: ${{ vars.COMPONENT_NAME }}
-  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}/${{ vars.COMPONENT_NAME }}
+  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}/${{ vars.NODE_ENV }}
   NODE_ENV: ${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}
 
 on:
@@ -30,15 +50,26 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       # Step 1: Checkout the code from the repository.
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step 2: Transfer the built files to the remote server.
-      # Assumes the build is done in your local/dev environment.
+      # Step 2: Setup Node.js with version 18.
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      # Step 3: Install dependencies and build the Next.js project.
+      - name: Install deps and build project
+        run: |
+          yarn install
+          yarn run build
+
+      # Step 4: Transfer the built files to the remote server.
       - name: Transfer files to server
         uses: appleboy/scp-action@master
         with:
@@ -49,7 +80,7 @@ jobs:
           source: ".next,public,package.json,yarn.lock"
           target: ${{ env.RELEASE_PATH }}
 
-      # Step 3: Deploy the application and restart services.
+      # Step 5: Deploy the application and restart services.
       - name: Deploy and restart services
         uses: appleboy/ssh-action@master
         with:
@@ -71,7 +102,7 @@ jobs:
             # Check Nginx configuration syntax
             sudo nginx -t || exit 1
             
-            # Restart Nginx service
+             # Restart Nginx service
             sudo systemctl restart nginx || exit 1
             
             # Restart the PM2 application
