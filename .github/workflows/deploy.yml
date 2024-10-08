@@ -1,10 +1,10 @@
-# ---------------- Developed by Adnan Ajmal - Next.js CD ---------------- #
+# ---------------- Developed by M Adnan Ajmal - Next.js CD ---------------- #
 # This workflow is a Continuous Integration/Continuous Deployment (CI/CD) pipeline for deploying a Next.js application
 # to a remote Ubuntu server.
 #
 # Here are some comments to make it easier for everyone to use:
 #
-# 1. The workflow uses environment variables to set the application name, component name, and release path.
+# 1. The workflow uses environment variables to set the application name, environment name, and release path.
 #    Ensure that these are set correctly according to your application's configuration.
 #
 # 2. The workflow runs on a push to the main branch and can be manually triggered with inputs to specify the target environment.
@@ -21,7 +21,6 @@
 # In addition, you will need to set up the following variables in your repository environment:
 #
 #    3.5. APP_NAME: the name of the project without spaces.
-#    3.6. COMPONENT_NAME: the name of the app component e.g: frontend, admin, backend.
 #
 # Overall, this workflow provides a good starting point for deploying a Next.js application to a remote server using GitHub Actions.
 # However, it should be customized according to your application's specific requirements.
@@ -30,9 +29,8 @@ name: 'Next.js CD'
 
 env:
   APP_NAME: ${{ vars.APP_NAME }}
-  COMPONENT_NAME: ${{ vars.COMPONENT_NAME }}
-  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}/${{ vars.NODE_ENV }}
   NODE_ENV: ${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}
+  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ env.NODE_ENV }}
 
 on:
   push:
@@ -50,7 +48,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout the code from the repository.
@@ -67,7 +65,7 @@ jobs:
       - name: Install deps and build project
         run: |
           yarn install
-          CI=yarn run build
+          CI= yarn run build
 
       # Step 4: Transfer the built files to the remote server.
       - name: Transfer files to server
@@ -102,8 +100,11 @@ jobs:
             # Check Nginx configuration syntax
             sudo nginx -t || exit 1
             
-             # Restart Nginx service
+            # Restart Nginx service
             sudo systemctl restart nginx || exit 1
-            
+
+            # Show the list of all PM2 processes
+            pm2 list
+
             # Restart the PM2 application
             pm2 restart ${{ env.APP_NAME }}-${{ env.NODE_ENV }} || pm2 start yarn --name "${{ env.APP_NAME }}-${{ env.NODE_ENV }}" -- start
