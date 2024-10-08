@@ -1,36 +1,27 @@
 # ---------------- Developed by M Adnan Ajmal - Next.js CD ---------------- #
 # This workflow is a Continuous Integration/Continuous Deployment (CI/CD) pipeline for deploying a Next.js application
-# to a remote Ubuntu server.
+# to a self-hosted Ubuntu server.
 #
-# Here are some comments to make it easier for everyone to use:
-#
-# 1. The workflow uses environment variables to set the application name, environment name, and release path.
+# 1. The workflow uses environment variables to set the application name, component name, and release path.
 #    Ensure that these are set correctly according to your application's configuration.
 #
 # 2. The workflow runs on a push to the main branch and can be manually triggered with inputs to specify the target environment.
 #
-# 3. It's important to note that this workflow uses repository environment and several secrets and variables that need to be set up
-#    in order for it to work properly. You will need to create the following secrets in your repository environment:
-#
-#    3.1. [Env]_SERVER: the IP address or domain name of the remote server you are deploying to.
-#    3.2. [Env]_USER: the username you use to SSH into the remote server (root user is recommended).
-#    3.3. [Env]_KEY: the SSH private key you use to authenticate with the remote server.
-#    3.4. [Env]_NGINX: the contents of your NGINX configuration file. This should be a multi-line string with each line
-#         separated by a newline character.
-#
-# In addition, you will need to set up the following variables in your repository environment:
-#
-#    3.5. APP_NAME: the name of the project without spaces.
-#
-# Overall, this workflow provides a good starting point for deploying a Next.js application to a remote server using GitHub Actions.
-# However, it should be customized according to your application's specific requirements.
+# 3. You need to set up the following secrets and variables in your repository environment:
+#    3.1. [Env]_SERVER: The IP address or domain name of the remote server you are deploying to.
+#    3.2. [Env]_USER: The username you use to SSH into the remote server.
+#    3.3. [Env]_KEY: The SSH private key you use to authenticate with the remote server.
+#    3.4. [Env]_NGINX: The contents of your NGINX configuration file.
+#    3.5. APP_NAME: The name of the project without spaces.
+#    3.6. COMPONENT_NAME: The name of the application component (e.g., frontend, backend).
 
 name: 'Next.js CD'
 
 env:
   APP_NAME: ${{ vars.APP_NAME }}
+  COMPONENT_NAME: ${{ vars.COMPONENT_NAME }}
+  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}/${{ vars.COMPONENT_NAME }}
   NODE_ENV: ${{ github.event_name == 'push' && 'dev' || github.event.inputs.environment }}
-  RELEASE_PATH: /root/${{ vars.APP_NAME }}/${{ env.NODE_ENV }}
 
 on:
   push:
@@ -48,7 +39,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Specify that the job runs on a self-hosted runner
 
     steps:
       # Step 1: Checkout the code from the repository.
@@ -107,4 +98,4 @@ jobs:
             pm2 list
 
             # Restart the PM2 application
-            pm2 restart ${{ env.APP_NAME }}-${{ env.NODE_ENV }} || pm2 start yarn --name "${{ env.APP_NAME }}-${{ env.NODE_ENV }}" -- start
+            pm2 restart ${{ env.APP_NAME }}-${{ env.COMPONENT_NAME }} || pm2 start yarn --name "${{ env.APP_NAME }}-${{ env.COMPONENT_NAME }}" -- start
