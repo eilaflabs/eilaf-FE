@@ -13,10 +13,10 @@ env:
 on:
   push:
     branches:
-      - main
+      - child
   pull_request:
     branches:
-      - main
+      - child
 
 jobs:
   ci:
