@@ -26,7 +26,7 @@ env:
 on:
   push:
     branches:
-      - main
+      - child
   workflow_dispatch:
     inputs:
       environment:
