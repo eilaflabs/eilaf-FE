@@ -1,6 +1,5 @@
 "use client";
 import { Box, Typography } from "@mui/material";
-
 import React from "react";
 
 const dataText = [
@@ -10,7 +9,7 @@ const dataText = [
       "We believe that technology, when managed properly, is an asset, not an expense. We partner with our clients and help them leverage technology to give them a competitive advantage. Technology when properly chosen, implemented and managed is an invaluable tool that can drive business success.",
   },
   {
-    title: "WE BELIEVE IN BUISNESS SUCCESS",
+    title: "WE BELIEVE IN BUSINESS SUCCESS",
     description:
       "We believe that technology, when managed properly, is an asset, not an expense. We partner with our clients and help them leverage technology to give them a competitive advantage. Technology when properly chosen, implemented and managed is an invaluable tool that can drive business success.",
   },

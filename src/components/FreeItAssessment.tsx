@@ -1,9 +1,7 @@
 "use client";
 import { Box, Typography, Button } from "@mui/material";
 import React from "react";
-import Image from "next/image";
-// import BlackLaptop from "@/assets/Black-laptop-image.png";
-import WhiteShirt from "@/assets/whiteshirtpng_bg.png";
+
 const FreeItAssessment = () => {
   return (
     <Box
@@ -33,13 +31,7 @@ const FreeItAssessment = () => {
             display: "none",
           },
         }}
-      >
-        <Image
-          src={WhiteShirt}
-          alt="cloudServices"
-          style={{ width: "100%", height: "auto" }}
-        />
-      </Box>
+      ></Box>
       <Box
         width={"50%"}
         display={"flex"}
@@ -47,7 +39,7 @@ const FreeItAssessment = () => {
         justifyContent={"center"}
         alignItems={"flex-start"}
         gap={"20px"}
-        padding={"0 20px 0 0 "}
+        padding={"0 20px 20px 0 "}
         sx={{
           "@media(max-width:768px)": {
             width: "80%",

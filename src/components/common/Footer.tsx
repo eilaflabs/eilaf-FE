@@ -1,12 +1,10 @@
 "use client";
-import { Box, Button, Typography } from "@mui/material";
-import React from "react";
-import Image from "next/image";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import Link from "next/link";
 import Logo from "@/assets/pakitsystem-main-Logo.svg";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { Box, Button, Typography } from "@mui/material";
+import Image from "next/image";
+import Link from "next/link";
+import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
 const serviceData = [
   { ServiceName: "IT Outsourcing" },
@@ -348,7 +346,7 @@ export const Footer = () => {
               fontWeight={"300"}
               fontStyle={"normal"}
             >
-              PAKIT SYSTEM © 2024 All Rights Reserved{" "}
+              Eilaf Labs © 2024 All Rights Reserved{" "}
             </Typography>
           </Box>
           <Box

@@ -4,7 +4,7 @@ import React from "react";
 const data = [
   {
     Description:
-      "We are pleased with the services offered by HMBTECH for several years. Their expertise is great help when it comes to computer solving matters we encountered in our small business. We recommend their services to any company that are in need of tech support for networking and software matters. Thank you for a job well done!",
+      "We are pleased with the services offered by Eilaf Labs for several years. Their expertise is great help when it comes to computer solving matters we encountered in our small business. We recommend their services to any company that are in need of tech support for networking and software matters. Thank you for a job well done!",
     name: "Liz Casanova, CTA, CSS",
     job: "Owner, Travel 4 LESS LLC",
   },
@@ -34,7 +34,7 @@ const data = [
   },
   {
     Description:
-      "I used HMBTECH yesterday for a small problem. He was here in a very short time, clean, and knew what he was doing. He even went and got a part for the computer. Service like that is hard to find nowdays. This is the second time I have used them; I do trust and believe what they say... Very GOOD SERVICE!!!!",
+      "I used Eilaf Labs yesterday for a small problem. He was here in a very short time, clean, and knew what he was doing. He even went and got a part for the computer. Service like that is hard to find nowdays. This is the second time I have used them; I do trust and believe what they say... Very GOOD SERVICE!!!!",
     name: "John Stringer",
     job: "",
   },
@@ -46,7 +46,7 @@ const data = [
   },
   {
     Description:
-      "HMBTECH services is beyond a doubt the most trustworthy and reliable computer service agency out there. Not only do they do their jobs professionally; but they will also help by teaching the customer what the customer needs to know, and how to do things themselves. I rely on this company and am so glad I have began working with them.",
+      "Eilaf Labs services is beyond a doubt the most trustworthy and reliable computer service agency out there. Not only do they do their jobs professionally; but they will also help by teaching the customer what the customer needs to know, and how to do things themselves. I rely on this company and am so glad I have began working with them.",
     name: "Paula Cogan Simon",
     job: "Potomac, Maryland",
   },
@@ -55,36 +55,37 @@ const data = [
 const data2 = [
   {
     discription:
-      "We want to say how appreciative we are that you came in and helped us out last night when our internet was down. Thank you so, so much for on short notice physically coming to the office, taking care of the problem, and ensuring proper steps for problem resolution. It is very rare that you find a service company that is willing to come out late in the evening, especially when just being called. HMB Tech has always provided us with top quality service and treats us like a valued customer. You are so responsive to our needs and treat us like a family rather than just a customer. Beyond our true appreciation and thanks, please let me know if now, or at anytime, we can write reviews, help your business grow, write recommendation letters, etc... It would be my pleasure to help your business grow as you have done such a fabulous job for us. Thank you",
+      "We want to say how appreciative we are that you came in and helped us out last night when our internet was down. Thank you so, so much for on short notice physically coming to the office, taking care of the problem, and ensuring proper steps for problem resolution. It is very rare that you find a service company that is willing to come out late in the evening, especially when just being called. Eilaf Labs has always provided us with top quality service and treats us like a valued customer. You are so responsive to our needs and treat us like a family rather than just a customer. Beyond our true appreciation and thanks, please let me know if now, or at anytime, we can write reviews, help your business grow, write recommendation letters, etc... It would be my pleasure to help your business grow as you have done such a fabulous job for us. Thank you",
     name: "Jessica Garber",
     job: "Metro Orthopedics and Sports Therapy - The Centers for Advanced Orthopaedics",
   },
   {
     discription:
-      "You know how most of us like to complain and not very often do we take the time to complement a job well done. Well I would like to congratulate you for bringing HMBTECH on board. I was actually shocked this morning when I found the library area (where there were all kinds of junk from empty boxes to old computers) and the computer room all cleaned and organized! The counters in the computer room actually seem to shine! I thought you should know how pleased ( at least I am) with the work HMBTECH is doing for us. Oh, and by the way, they did install Publisher on my computer yesterday as promised!",
+      "You know how most of us like to complain and not very often do we take the time to complement a job well done. Well I would like to congratulate you for bringing Eilaf Labs on board. I was actually shocked this morning when I found the library area (where there were all kinds of junk from empty boxes to old computers) and the computer room all cleaned and organized! The counters in the computer room actually seem to shine! I thought you should know how pleased ( at least I am) with the work Eilaf Labs is doing for us. Oh, and by the way, they did install Publisher on my computer yesterday as promised!",
     name: "Lynne Akhtar",
     job: "Foster & Associates",
   },
   {
     discription:
-      "I’ve used HMBTECH for about three years as my primary local IT support for the business I manage (Silver Spring Extra Space Self Storage), and I found them to be very responsive & extraordinarily knowledgeable about all things networking & computing. I’m very pleased. I’ve also used them for my personal computers at home (laptops) & have been totally satisfied with their services. The prices for both my business & my personal computing needs are very competitive & the turn-around time on repairs has been extraordinarily fast. I highly recommend them to all for any computing or networking issues.",
+      "I’ve used Eilaf Labs for about three years as my primary local IT support for the business I manage (Silver Spring Extra Space Self Storage), and I found them to be very responsive & extraordinarily knowledgeable about all things networking & computing. I’m very pleased. I’ve also used them for my personal computers at home (laptops) & have been totally satisfied with their services. The prices for both my business & my personal computing needs are very competitive & the turn-around time on repairs has been extraordinarily fast. I highly recommend them to all for any computing or networking issues.",
     name: "Dick Weavil",
     job: "Property Manager, Storage Post l Extra Space",
   },
   {
     discription:
-      "I have used HMBTECH to service my computer on numerous occasions. They explain what needs to be done, do it in a timely manner, and stand behind their work. I have recommended them to my friends and I’m happy I have a competent business I can rely on.",
+      "I have used Eilaf Labs to service my computer on numerous occasions. They explain what needs to be done, do it in a timely manner, and stand behind their work. I have recommended them to my friends and I’m happy I have a competent business I can rely on.",
     name: "Brigid Soueid",
     job: "",
   },
   {
     discription:
-      "I highly recommend HMBTECH Computer Services. For five years, HMBTECH has assisted my small business with on-site maintenance to trouble shoot emergent problems and to plan, buy, install and checkout new hardware and software. HMBTECH was instrumental in using my legacy computer equipment and with establishing John Trent Associates’ home office IT system with four laptop and desktop workstations on multiple floors, access points, and printer sharing, fax and scanner.",
+      "I highly recommend Eilaf Labs Computer Services. For five years, Eilaf Labs has assisted my small business with on-site maintenance to trouble shoot emergent problems and to plan, buy, install and checkout new hardware and software. Eilaf Labs was instrumental in using my legacy computer equipment and with establishing John Trent Associates’ home office IT system with four laptop and desktop workstations on multiple floors, access points, and printer sharing, fax and scanner.",
     name: "John Trent",
     job: "President, John Trent Associates",
   },
 ];
-const Testimonalscontent = () => {
+
+const TestimonialsContent: React.FC = () => {
   return (
     <Box width={"100%"} position={"relative"} zIndex={"120px"} bgcolor={"#fff"}>
       <Box
@@ -190,4 +191,4 @@ const Testimonalscontent = () => {
   );
 };
 
-export default Testimonalscontent;
+export default TestimonialsContent;

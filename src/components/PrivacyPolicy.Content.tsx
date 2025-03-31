@@ -85,7 +85,7 @@ export const PrivacyPolicyContent = () => {
           // },
         }}
       >
-        At HMB TECH we take your privacy seriously. This section outlines our
+        At Eilaf Labs we take your privacy seriously. This section outlines our
         commitment to safeguarding your personal information and ensuring
         transparency in our practices.
       </Typography>

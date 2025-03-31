@@ -1,10 +1,9 @@
 "use client";
-import { Box, TextField, Button, Typography } from "@mui/material";
 import TelegramIcon from "@mui/icons-material/Telegram";
-
+import { Box, Button, TextField, Typography } from "@mui/material";
 import React from "react";
 
-export const RequiredFields = () => {
+export const RequiredFields: React.FC = () => {
   return (
     <>
       <Box
@@ -494,10 +493,10 @@ export const RequiredFields = () => {
             fontSize="10px"
             margin="0px 42px 17.5px 0px"
           >
-            By clicking ‘Submit’, you agree to HMBTECH’s Terms of Use and
+            By clicking ‘Submit’, you agree to Eilaf Labs’ Terms of Use and
             Privacy Policy. You consent to receive phone calls and SMS messages
-            from HMBTECH to provide updates and information regarding your
-            business with HMBTECH. Message frequency may vary. Message & data
+            from Eilaf Labs to provide updates and information regarding your
+            business with Eilaf Labs. Message frequency may vary. Message & data
             rates may apply. Reply STOP to opt-out of further messaging. Reply
             HELP for more information. See our Privacy Policy”.
           </Typography>

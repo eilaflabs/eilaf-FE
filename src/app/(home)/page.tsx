@@ -1,35 +1,34 @@
 "use client";
-import Miniheader from "@/components/mini.header";
+import BreakFix from "@/components/Break_fix";
+import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
-import Homesection from "@/components/Home-section";
+import CompanyImages from "@/components/Company-images";
+import FreeItAssessment from "@/components/FreeItAssessment";
+import HomeSection from "@/components/Home-section";
+import SLiderImages from "@/components/imagesSlider";
 import ITOutsourcingBreakFix from "@/components/ITOutsourcing_BreakFix";
 import OurServices from "@/components/Our.Services";
 import OurClientsSays from "@/components/OurClients.Says";
-import Footer from "@/components/common/Footer";
-import Breakfix from "@/components/Break_fix";
-import FreeItAssessment from "@/components/FreeItAssessment";
-import Companyimages from "@/components/Company-images";
-import SLiderImages from "@/components/imagesSlider";
-import ClientLayout from "./ClientLayout";
 import { Box } from "@mui/material";
+import ClientLayout from "./ClientLayout";
+import React from "react";
 
 export default function Home() {
   return (
     <ClientLayout>
       <Box sx={{ position: "absolute", zIndex: 200, width: "100%" }}>
-        <Miniheader />
         <Header />
       </Box>
       <Box sx={{ position: "relative", zIndex: 0 }}>
-        <Homesection />
+        <HomeSection />
       </Box>
       <Box sx={{ position: "relative" }}>
         <ITOutsourcingBreakFix />
-        <Breakfix />
+        <BreakFix />
         <FreeItAssessment />
         <OurServices />
         <OurClientsSays />
-        <Companyimages />
+        <CompanyImages />
         <SLiderImages />
         <Footer />
       </Box>

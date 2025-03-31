@@ -1,6 +1,6 @@
-import React from "react";
 import { Box, Typography } from "@mui/material";
-const Aboutcontenttext = () => {
+
+const AboutContentText = () => {
   return (
     <Box
       width={"100%"}
@@ -34,8 +34,8 @@ const Aboutcontenttext = () => {
             },
           }}
         >
-          PAK IT SYSTEM is a family owned and operated computer services
-          business serving the Washington DC metropolitan area since 2004. Our
+          Eilaf Labs is a family owned and operated computer services business
+          serving the Washington DC metropolitan area since 2004. Our
           technicians are Microsoft certified and are held to the highest
           standards of service and integrity.
         </Typography>
@@ -62,7 +62,7 @@ const Aboutcontenttext = () => {
             },
           }}
         >
-          Don’t hesitate to Contactus today for a free IT assessment. In most
+          Don’t hesitate to Contact us today for a free IT assessment. In most
           cases, we can visit you on the same day you call
         </Typography>
       </Box>
@@ -70,4 +70,4 @@ const Aboutcontenttext = () => {
   );
 };
 
-export default Aboutcontenttext;
+export default AboutContentText;

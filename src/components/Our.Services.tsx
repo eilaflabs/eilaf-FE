@@ -1,7 +1,4 @@
-import {
-  Box,
-  Typography,
-} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import {
@@ -18,7 +15,7 @@ const services = [
     icon: <SettingsSuggestIcon sx={{ fontSize: "50px", color: "#3644af" }} />,
     title: "IT OUTSOURCING",
     description:
-      "With HMB TECH’s managed services you can enjoy the benefits of having a full IT department at your disposal without having to pay for one.",
+      "With Eilaf Labs’ managed services you can enjoy the benefits of having a full IT department at your disposal without having to pay for one.",
   },
   {
     id: 2,

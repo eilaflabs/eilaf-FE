@@ -9,16 +9,16 @@ const services = [
   {
     id: 1,
     icon: <FaRegHandPointer style={{ fontSize: "50px", color: "#3644af" }} />,
-    title: "PAKITSYSTEM WAY",
+    title: "Eilaf Labs",
     description:
-      "You don’t get just any IT department. You get an IT department ran the  PAKIT System way.  This means that we focus on the success of our customers. If you succeed, we succeed. This is translated into world-class customer service and response times combined with the latest technologies and services. Once you experience the benefits of the  PAKIT System way, you will stop seeing technology as an expense and start seeing it as an investment",
+      "You don’t get just any IT department. You get an IT department ran the Eilaf Labs way. This means that we focus on the success of our customers. If you succeed, we succeed. This is translated into world-class customer service and response times combined with the latest technologies and services. Once you experience the benefits of the Eilaf Labs way, you will stop seeing technology as an expense and start seeing it as an investment",
   },
   {
     id: 2,
     icon: <IoDiamondOutline style={{ fontSize: "50px", color: "#3644af" }} />,
     title: "SAVINGS",
     description:
-      "When considering IT expenses, most companies consider only the invoices they receive from their IT provider, but forget to take into consideration the cost of having an employee trying to deal with an IT issue. It takes longer for the employee to resolve the issue, increasing business downtime, which in turn costs the business. There is also the opportunity cost of the employee not doing what they were hired to do. Once you take all that into consideration you will see that with  PAKIT System’s",
+      "When considering IT expenses, most companies consider only the invoices they receive from their IT provider, but forget to take into consideration the cost of having an employee trying to deal with an IT issue. It takes longer for the employee to resolve the issue, increasing business downtime, which in turn costs the business. There is also the opportunity cost of the employee not doing what they were hired to do. Once you take all that into consideration you will see that with Eilaf Labs",
   },
   {
     id: 3,

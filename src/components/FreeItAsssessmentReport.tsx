@@ -2,8 +2,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { FaAngleRight } from "react-icons/fa";
-import Image from "next/image";
-import whiteshirt from "@/assets/whiteshirtpng_bg.png";
 
 export const FreeItAsssessmentReport = () => {
   const assessmentItems = [
@@ -94,14 +92,7 @@ export const FreeItAsssessmentReport = () => {
             paddingTop={{ xs: "20px", md: "0" }} // Adjust top padding on mobile
             display="flex"
             justifyContent="center"
-          >
-            <Image
-              src={whiteshirt}
-              alt="white shirt"
-              className="white shirt-image"
-              style={{ width: "100%", height: "auto" }} // Make sure image resizes well
-            />
-          </Box>
+          ></Box>
         </Box>
       </Box>
 

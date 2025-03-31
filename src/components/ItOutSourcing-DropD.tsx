@@ -83,7 +83,7 @@ const ItOutSourcingDropD = () => {
             paddingTop={"29px"}
             fontWeight={"400"}
           >
-            When you outsource your IT department to HMB TECH, you will get
+            When you outsource your IT department to Eilaf Labs, you will get
             World-Class IT support along with our managed services all for a low
             monthly flat rate. In essence, you will have your own IT department
             at your disposal which you can use at any time and as much as
