@@ -100,7 +100,7 @@ export const ContactUsform = () => {
             },
           }}
         >
-          Our Service Areas
+          Contact
         </Typography>
         <Box
           borderBottom={"1px dotted #3444af"}
@@ -130,66 +130,7 @@ export const ContactUsform = () => {
               },
             }}
           >
-            WASHINGTON DC METRO AREA
-          </Typography>
-          <Typography
-            textAlign={"center"}
-            fontSize={"28px"}
-            color="#7a7a7a"
-            fontWeight={"normal"}
-            letterSpacing={"1px"}
-            textTransform={"uppercase"}
-            sx={{
-              "@media (max-width:768px)": {
-                fontSize: "26px",
-              },
-            }}
-          >
-            301.363.2823
-          </Typography>
-        </Box>
-
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          gap={"10px"}
-          sx={{
-            "@media (max-width:768px)": {
-              width: "50%",
-            },
-            "@media (max-width:500px)": {
-              width: "90%",
-            },
-          }}
-        >
-          <Typography
-            textAlign={"center"}
-            fontSize={"20px"}
-            color="#000"
-            fontWeight={"800"}
-            textTransform={"uppercase"}
-            sx={{
-              "@media (max-width:768px)": {
-                fontSize: "18px",
-              },
-            }}
-          >
-            FLORIDA
-          </Typography>
-          <Typography
-            textAlign={"center"}
-            fontSize={"28px"}
-            color="#7a7a7a"
-            fontWeight={"normal"}
-            letterSpacing={"1px"}
-            textTransform={"uppercase"}
-            sx={{
-              "@media (max-width:768px)": {
-                fontSize: "26px",
-              },
-            }}
-          >
-            407.537.9425
+            contact@eilaflabs.com
           </Typography>
         </Box>
       </Box>
